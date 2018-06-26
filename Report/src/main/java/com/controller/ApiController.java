@@ -14,7 +14,8 @@ import java.util.List;
  * $Log: ApiController.java,v $
  */
 @RestController
-public class ApiController {
+public class ApiController
+{
 
   @Autowired
   private EmployeeService employeeService;
@@ -23,7 +24,8 @@ public class ApiController {
    * Handle request to the default page
    */
   @GetMapping("/")
-  public List<Employee> viewHome() {
+  public List<Employee> viewHome()
+  {
     return employeeService.findAllEmployees();
   }
 
