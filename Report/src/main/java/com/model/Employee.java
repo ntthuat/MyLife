@@ -11,7 +11,7 @@ public class Employee
 
   private String lastName;
 
-  private Integer age;
+  private String birthDay;
 
   private String jobTitle;
 
@@ -25,17 +25,21 @@ public class Employee
 
   private String phoneNumber;
 
-  public Employee(String firstName, String lastName, Integer age, String jobTitle, String company, String address, String city, String country, String phoneNumber)
+  public Employee(String firstName, String lastName, String birthDay, String jobTitle, String company, String address, String city, String country, String phoneNumber)
   {
     this.firstName = firstName;
     this.lastName = lastName;
-    this.age = age;
+    this.birthDay = birthDay;
     this.jobTitle = jobTitle;
     this.company = company;
     this.address = address;
     this.city = city;
     this.country = country;
     this.phoneNumber = phoneNumber;
+  }
+
+  public Employee()
+  {
   }
 
   public String getFirstName()
@@ -58,14 +62,14 @@ public class Employee
     this.lastName = lastName;
   }
 
-  public Integer getAge()
+  public String getBirthDay()
   {
-    return age;
+    return birthDay;
   }
 
-  public void setAge(Integer age)
+  public void setBirthDay(String birthDay)
   {
-    this.age = age;
+    this.birthDay = birthDay;
   }
 
   public String getJobTitle()

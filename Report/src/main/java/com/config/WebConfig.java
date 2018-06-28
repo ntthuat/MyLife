@@ -16,13 +16,21 @@ import java.util.List;
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {
-
   @Override
   public void configureContentNegotiation(ContentNegotiationConfigurer configurer)
   {
     configurer
         .defaultContentType(MediaType.APPLICATION_JSON)
         .favorPathExtension(true);
+    /*configurer.favorPathExtension(true).
+        favorParameter(true).
+        parameterName("mediaType").
+        ignoreAcceptHeader(true).
+        useJaf(false).
+        defaultContentType(MediaType.APPLICATION_JSON).
+        mediaType("xml", MediaType.APPLICATION_XML).
+        mediaType("json", MediaType.APPLICATION_JSON);*/
+
   }
 
   /*

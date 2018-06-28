@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:dt="http://www.thymeleaf.org/dandelion/datatables">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div class="span12">
+      <table id="myTableId" dt:table="true">
+        <thead>
+        <tr align="left">
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Birth Day</th>
+          <th>Job Title</th>
+          <th>Company</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Country</th>
+          <th>Phone Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employees}">
+          <td th:text="${employee.lastName}"></td>
+          <td th:text="${employee.firstName}"></td>
+          <td th:text="${employee.birthDay}"></td>
+          <td th:text="${employee.jobTitle}"></td>
+          <td th:text="${employee.company}"></td>
+          <td th:text="${employee.address}"></td>
+          <td th:text="${employee.city}"></td>
+          <td th:text="${employee.country}"></td>
+          <td th:text="${employee.phoneNumber}"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>

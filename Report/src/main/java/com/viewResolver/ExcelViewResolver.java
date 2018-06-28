@@ -6,11 +6,18 @@ import org.springframework.web.servlet.ViewResolver;
 
 import java.util.Locale;
 
+
 public class ExcelViewResolver implements ViewResolver
 {
   @Override
   public View resolveViewName(String s, Locale locale) throws Exception
   {
-    return new ExcelView();
+    System.out.println("ExcelViewResolver: " + s);
+    if (s.equals("download")){
+      return new ExcelView();
+    } else {
+      return null;
+    }
   }
+
 }
