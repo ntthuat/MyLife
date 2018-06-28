@@ -1,6 +1,5 @@
 package com.config;
 
-import com.viewResolver.ExcelViewResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -36,7 +35,7 @@ public class WebConfig extends WebMvcConfigurerAdapter
   /*
    * Configure ContentNegotiatingViewResolver
    */
-  @Bean
+  /*@Bean
   public ViewResolver contentNegotiatingViewResolver(ContentNegotiationManager manager)
   {
     ContentNegotiatingViewResolver resolver = new ContentNegotiatingViewResolver();
@@ -49,16 +48,16 @@ public class WebConfig extends WebMvcConfigurerAdapter
 
     resolver.setViewResolvers(resolvers);
     return resolver;
-  }
+  }*/
 
   /*
    * Configure View resolver to provide XLS output using Apache POI library to
    * generate XLS output for an object content
    */
-  @Bean
+  /*@Bean
   public ViewResolver excelViewResolver()
   {
     return new ExcelViewResolver();
-  }
+  }*/
 
 }
