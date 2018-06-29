@@ -31,33 +31,4 @@ public class WebConfig extends WebMvcConfigurerAdapter
         mediaType("json", MediaType.APPLICATION_JSON);*/
 
   }
-
-  /*
-   * Configure ContentNegotiatingViewResolver
-   */
-  /*@Bean
-  public ViewResolver contentNegotiatingViewResolver(ContentNegotiationManager manager)
-  {
-    ContentNegotiatingViewResolver resolver = new ContentNegotiatingViewResolver();
-    resolver.setContentNegotiationManager(manager);
-
-    // Define all possible view resolvers
-    List<ViewResolver> resolvers = new ArrayList<>();
-
-    resolvers.add(excelViewResolver());
-
-    resolver.setViewResolvers(resolvers);
-    return resolver;
-  }*/
-
-  /*
-   * Configure View resolver to provide XLS output using Apache POI library to
-   * generate XLS output for an object content
-   */
-  /*@Bean
-  public ViewResolver excelViewResolver()
-  {
-    return new ExcelViewResolver();
-  }*/
-
 }

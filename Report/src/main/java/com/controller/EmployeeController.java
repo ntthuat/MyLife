@@ -1,11 +1,12 @@
 package com.controller;
 
 import com.service.EmployeeService;
+import com.view.ExcelView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -25,5 +26,11 @@ public class EmployeeController
     List employees = employeeService.findAllEmployees();
     model.addAttribute("employees", employees);
     return "all-employees";
+  }
+
+  @GetMapping("/all-employees/download")
+  public ModelAndView allEmployeesDownload(Model model) {
+    model.addAttribute("employees", employeeService.findAllEmployees());
+    return new ModelAndView(new ExcelView());
   }
 }
