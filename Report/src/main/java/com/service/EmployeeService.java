@@ -28,4 +28,19 @@ public class EmployeeService
   {
     return employeeDao.findById(id);
   }
+
+  public int insertEmployee(){
+    //TODO
+    return 0;
+  }
+
+  public int updateEmployee(){
+    //TODO
+    return 0;
+  }
+
+  public int deleteEmployee(){
+    //TODO
+    return 0;
+  }
 }

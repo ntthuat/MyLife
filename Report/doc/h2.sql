@@ -2,9 +2,9 @@
 CREATE SCHEMA IF NOT EXISTS REPORT;
 commit; -- NEED TO USE?
 
--- REPORT.EMPLOYEE
-CREATE TABLE IF NOT EXISTS REPORT.EMPLOYEE;
-COMMIT; -- NEED TO USE?
+-------------------
+-- REPORT.EMPLOYEE;
+--DROP TABLE REPORT.EMPLOYEE;
 
 CREATE TABLE REPORT.EMPLOYEE
 (IDEMPLOYEE VARCHAR NOT NULL,
@@ -19,6 +19,8 @@ COUNTRY VARCHAR NOT NULL,
 PHONENUMBER VARCHAR NOT NULL,
 PRIMARY KEY (IDEMPLOYEE));
 
-INSERT INTO REPORT.EMPLOYEE VALUES ('001', 'Phuong','Doan Thi Lam','1997','Cam Lam','Khanh Hoa','Tinh Hoa','Viet Nam','Supervisor','0164 918 5xxx');
-INSERT INTO REPORT.EMPLOYEE VALUES ('002', 'Thuat', 'Nguyen Thien','1992','Ba Tri', 'Ben Tre',  'Codix',   'Viet Nam','Engineer',  '0124 7679 xxx');
-INSERT INTO REPORT.EMPLOYEE VALUES ('003', 'Nhung', 'Doan Thi Hong','1994','Cam Lam', 'Khanh Hoa',  'NA',   'Viet Nam','NA',  'NA');
+INSERT INTO REPORT.EMPLOYEE VALUES ('001', 'Phuong','Doan Thi Lam', '1997','Supervisor','Tinh Hoa','Cam Lam','Khanh Hoa','Viet Nam','0164 918 5xxx');
+INSERT INTO REPORT.EMPLOYEE VALUES ('002', 'Thuat', 'Nguyen Thien', '1992','Engineer',   'Codix',  'Ba Tri', 'Ben Tre',  'Viet Nam',  '0124 7679 xxx');
+INSERT INTO REPORT.EMPLOYEE VALUES ('003', 'Nhung', 'Doan Thi Hong','1994','NA',         'NA',     'Cam Lam','Khanh Hoa','Viet Nam',  'NA');
+
+SELECT * FROM REPORT.EMPLOYEE;

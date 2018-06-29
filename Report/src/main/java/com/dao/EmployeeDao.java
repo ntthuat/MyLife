@@ -37,6 +37,7 @@ public class EmployeeDao
       e.setCompany(rs.getString("COMPANY"));
       e.setCity(rs.getString("CITY"));
       e.setCountry(rs.getString("COUNTRY"));
+      e.setAddress(rs.getString("ADDRESS"));
       e.setPhoneNumber(rs.getString("PHONENUMBER"));
       return e;
     }
