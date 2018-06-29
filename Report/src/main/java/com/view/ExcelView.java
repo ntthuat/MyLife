@@ -44,8 +44,8 @@ public class ExcelView extends AbstractXlsView
 
     for (Employee employee : employees) {
       Row userRow = sheet.createRow(rowCount++);
-      userRow.createCell(0).setCellValue(employee.getFirstName());
-      userRow.createCell(1).setCellValue(employee.getLastName());
+      userRow.createCell(0).setCellValue(employee.getLastName());
+      userRow.createCell(1).setCellValue(employee.getFirstName());
       userRow.createCell(2).setCellValue(employee.getBirthDay());
       userRow.createCell(3).setCellValue(employee.getJobTitle());
       userRow.createCell(4).setCellValue(employee.getCompany());

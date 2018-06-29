@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -32,5 +33,11 @@ public class EmployeeController
   public ModelAndView allEmployeesDownload(Model model) {
     model.addAttribute("employees", employeeService.findAllEmployees());
     return new ModelAndView(new ExcelView());
+  }
+
+  @GetMapping("/employee/{id}")
+  public String getEmployeeById(@PathVariable("id") String id,Model model){
+    model.addAttribute("employees", employeeService.findEmployeeById(id));
+    return "all-employees";
   }
 }

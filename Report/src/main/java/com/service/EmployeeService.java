@@ -21,6 +21,11 @@ public class EmployeeService
 
   public List<Employee> findAllEmployees()
   {
-    return employeeDao.fakeEmployees();
+    return employeeDao.findAll();
+  }
+
+  public Employee findEmployeeById(String id)
+  {
+    return employeeDao.findById(id);
   }
 }

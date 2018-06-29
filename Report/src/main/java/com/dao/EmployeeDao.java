@@ -1,8 +1,14 @@
 package com.dao;
 
 import com.model.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,33 +20,52 @@ import java.util.List;
 @Repository
 public class EmployeeDao
 {
-  public List<Employee> fakeEmployees(){
-    Employee e1 = new Employee();
-    e1.setFirstName("Phuong");
-    e1.setLastName("Doan Thi Lam");
-    e1.setBirthDay("1997");
-    e1.setAddress("Cam Lam");
-    e1.setCity("Khanh Hoa");
-    e1.setCompany("Tinh Hoa");
-    e1.setCountry("Viet Nam");
-    e1.setJobTitle("Supervisor");
-    e1.setPhoneNumber("0164 918 5xxx");
 
-    Employee e2 = new Employee();
-    e2.setFirstName("Thuat");
-    e2.setLastName("Nguyen Thien");
-    e2.setBirthDay("1992");
-    e2.setAddress("Ba Tri");
-    e2.setCity("Ben Tre");
-    e2.setCompany("Codix");
-    e2.setCountry("Viet Nam");
-    e2.setJobTitle("Engineer");
-    e2.setPhoneNumber("0124 7679 xxx");
+  @Autowired
+  JdbcTemplate jdbcTemplate;
 
-    List list = new LinkedList();
-    list.add(e1);
-    list.add(e2);
+  class EmployeeRowMapper implements RowMapper<Employee>
+  {
+    @Override
+    public Employee mapRow(ResultSet rs, int rowNum) throws SQLException
+    {
+      Employee e = new Employee();
+      e.setFirstName(rs.getString("FIRSTNAME"));
+      e.setLastName(rs.getString("LASTNAME"));
+      e.setBirthDay(rs.getString("BIRTHDAY"));
+      e.setJobTitle(rs.getString("JOBTITLE"));
+      e.setCompany(rs.getString("COMPANY"));
+      e.setCity(rs.getString("CITY"));
+      e.setCountry(rs.getString("COUNTRY"));
+      e.setPhoneNumber(rs.getString("PHONENUMBER"));
+      return e;
+    }
+  }
 
-    return list;
+  public List<Employee> findAll() {
+    return jdbcTemplate.query("select * from report.employee", new EmployeeRowMapper());
+  }
+
+  public Employee findById(String id) {
+    return jdbcTemplate.queryForObject("select * from report.employee where idemployee=?", new Object[] { id },
+        new BeanPropertyRowMapper<Employee>(Employee.class));
+  }
+
+  public int deleteById(long id) {
+    return jdbcTemplate.update("delete from student where id=?", new Object[] { id });
+  }
+
+  public int insert(Employee student) {
+    /*return jdbcTemplate.update("insert into student (id, name, passport_number) " + "values(?,  ?, ?)",
+        new Object[] { student.getId(), student.getName(), student.getPassportNumber() });*/
+
+    return 0;
+  }
+
+  public int update(Employee student) {
+    /*return jdbcTemplate.update("update student " + " set name = ?, passport_number = ? " + " where id = ?",
+        new Object[] { student.getName(), student.getPassportNumber(), student.getId() });*/
+
+    return 0;
   }
 }

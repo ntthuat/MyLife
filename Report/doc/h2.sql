@@ -21,3 +21,4 @@ PRIMARY KEY (IDEMPLOYEE));
 
 INSERT INTO REPORT.EMPLOYEE VALUES ('001', 'Phuong','Doan Thi Lam','1997','Cam Lam','Khanh Hoa','Tinh Hoa','Viet Nam','Supervisor','0164 918 5xxx');
 INSERT INTO REPORT.EMPLOYEE VALUES ('002', 'Thuat', 'Nguyen Thien','1992','Ba Tri', 'Ben Tre',  'Codix',   'Viet Nam','Engineer',  '0124 7679 xxx');
+INSERT INTO REPORT.EMPLOYEE VALUES ('003', 'Nhung', 'Doan Thi Hong','1994','Cam Lam', 'Khanh Hoa',  'NA',   'Viet Nam','NA',  'NA');
