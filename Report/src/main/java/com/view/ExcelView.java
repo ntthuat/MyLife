@@ -35,23 +35,17 @@ public class ExcelView extends AbstractXlsView
     CellStyle style = ExcelUtil.createHeaderStyle(workbook);
     Row headerRow = sheet.createRow(0);
     headerRow.createCell(0).setCellValue("Last Name");
-    headerRow.getCell(0).setCellStyle(style);
     headerRow.createCell(1).setCellValue("First Name");
-    headerRow.getCell(1).setCellStyle(style);
     headerRow.createCell(2).setCellValue("Birthday");
-    headerRow.getCell(2).setCellStyle(style);
     headerRow.createCell(3).setCellValue("Job Title");
-    headerRow.getCell(3).setCellStyle(style);
     headerRow.createCell(4).setCellValue("Company");
-    headerRow.getCell(4).setCellStyle(style);
     headerRow.createCell(5).setCellValue("Address");
-    headerRow.getCell(5).setCellStyle(style);
     headerRow.createCell(6).setCellValue("City");
-    headerRow.getCell(6).setCellStyle(style);
     headerRow.createCell(7).setCellValue("Country");
-    headerRow.getCell(7).setCellStyle(style);
     headerRow.createCell(8).setCellValue("Phone Number");
-    headerRow.getCell(8).setCellStyle(style);
+    for (int i = 0; i < headerRow.getPhysicalNumberOfCells(); i++) {
+      headerRow.getCell(i).setCellStyle(style);
+    }
 
     int rowCount = 1;
     for (Employee employee : employees) {
