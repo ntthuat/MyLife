@@ -5,8 +5,7 @@ package com.model;
  * $Revision: 1.0 $ $Date: 2018/06/26 10:51:24 $
  * $Log: Employee.java,v $
  */
-public class Employee
-{
+public class Employee {
   private String firstName;
 
   private String lastName;
@@ -25,8 +24,7 @@ public class Employee
 
   private String phoneNumber;
 
-  public Employee(String firstName, String lastName, String birthDay, String jobTitle, String company, String address, String city, String country, String phoneNumber)
-  {
+  public Employee(String firstName, String lastName, String birthDay, String jobTitle, String company, String address, String city, String country, String phoneNumber) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthDay = birthDay;
@@ -38,97 +36,78 @@ public class Employee
     this.phoneNumber = phoneNumber;
   }
 
-  public Employee()
-  {
+  public Employee() {
   }
 
-  public String getFirstName()
-  {
+  public String getFirstName() {
     return firstName;
   }
 
-  public void setFirstName(String firstName)
-  {
+  public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
 
-  public String getLastName()
-  {
+  public String getLastName() {
     return lastName;
   }
 
-  public void setLastName(String lastName)
-  {
+  public void setLastName(String lastName) {
     this.lastName = lastName;
   }
 
-  public String getBirthDay()
-  {
+  public String getBirthDay() {
     return birthDay;
   }
 
-  public void setBirthDay(String birthDay)
-  {
+  public void setBirthDay(String birthDay) {
     this.birthDay = birthDay;
   }
 
-  public String getJobTitle()
-  {
+  public String getJobTitle() {
     return jobTitle;
   }
 
-  public void setJobTitle(String jobTitle)
-  {
+  public void setJobTitle(String jobTitle) {
     this.jobTitle = jobTitle;
   }
 
-  public String getCompany()
-  {
+  public String getCompany() {
     return company;
   }
 
-  public void setCompany(String company)
-  {
+  public void setCompany(String company) {
     this.company = company;
   }
 
-  public String getAddress()
-  {
+  public String getAddress() {
     return address;
   }
 
-  public void setAddress(String address)
-  {
+  public void setAddress(String address) {
     this.address = address;
   }
 
-  public String getCity()
-  {
+  public String getCity() {
     return city;
   }
 
-  public void setCity(String city)
-  {
+  public void setCity(String city) {
     this.city = city;
   }
 
-  public String getCountry()
-  {
+  public String getCountry() {
     return country;
   }
 
-  public void setCountry(String country)
-  {
+  public void setCountry(String country) {
     this.country = country;
   }
 
-  public String getPhoneNumber()
-  {
+  public String getPhoneNumber() {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(String phoneNumber)
-  {
+  public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 }

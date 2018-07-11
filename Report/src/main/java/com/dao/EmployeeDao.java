@@ -18,17 +18,14 @@ import java.util.List;
  * $Log: EmployeeDao.java,v $
  */
 @Repository
-public class EmployeeDao
-{
+public class EmployeeDao {
 
   @Autowired
   JdbcTemplate jdbcTemplate;
 
-  class EmployeeRowMapper implements RowMapper<Employee>
-  {
+  class EmployeeRowMapper implements RowMapper<Employee> {
     @Override
-    public Employee mapRow(ResultSet rs, int rowNum) throws SQLException
-    {
+    public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
       Employee e = new Employee();
       e.setFirstName(rs.getString("FIRSTNAME"));
       e.setLastName(rs.getString("LASTNAME"));
@@ -48,12 +45,12 @@ public class EmployeeDao
   }
 
   public Employee findById(String id) {
-    return jdbcTemplate.queryForObject("select * from report.employee where idemployee=?", new Object[] { id },
+    return jdbcTemplate.queryForObject("select * from report.employee where idemployee=?", new Object[]{id},
         new BeanPropertyRowMapper<Employee>(Employee.class));
   }
 
   public int deleteById(long id) {
-    return jdbcTemplate.update("delete from student where id=?", new Object[] { id });
+    return jdbcTemplate.update("delete from student where id=?", new Object[]{id});
   }
 
   public int insert(Employee student) {

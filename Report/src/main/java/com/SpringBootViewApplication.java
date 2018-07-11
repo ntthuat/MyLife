@@ -9,10 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * $Log: SpringBootViewApplication.java,v $
  */
 @SpringBootApplication
-public class SpringBootViewApplication
-{
-  public static void main(String[] args)
-  {
+public class SpringBootViewApplication {
+  public static void main(String[] args) {
     System.out.println("Check here: http://localhost:8080/");
     System.out.println("Database here: http://localhost:8080/h2-console");
 

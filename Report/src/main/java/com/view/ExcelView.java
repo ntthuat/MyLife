@@ -1,8 +1,7 @@
 package com.view;
 
-import com.common.Util.ExcelUtil;
+import com.common.util.ExcelUtil;
 import com.model.Employee;
-import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.*;
 import org.springframework.web.servlet.view.document.AbstractXlsView;
 
@@ -16,11 +15,9 @@ import java.util.Map;
  * $Revision: 1.0 $ $Date: 2018/06/26 11:38:01 $
  * $Log: ExcelView.java,v $
  */
-public class ExcelView extends AbstractXlsView
-{
+public class ExcelView extends AbstractXlsView {
   @Override
-  protected void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request, HttpServletResponse response) throws Exception
-  {
+  protected void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request, HttpServletResponse response) throws Exception {
     // change the file name
     response.setHeader("Content-Disposition", "attachment; filename=\"my-xls-file.xls\"");
 

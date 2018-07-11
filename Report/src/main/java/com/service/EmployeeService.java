@@ -13,33 +13,30 @@ import java.util.List;
  * $Log: EmployeeService.java,v $
  */
 @Service
-public class EmployeeService
-{
+public class EmployeeService {
 
   @Autowired
   EmployeeDao employeeDao;
 
-  public List<Employee> findAllEmployees()
-  {
+  public List<Employee> findAllEmployees() {
     return employeeDao.findAll();
   }
 
-  public Employee findEmployeeById(String id)
-  {
+  public Employee findEmployeeById(String id) {
     return employeeDao.findById(id);
   }
 
-  public int insertEmployee(){
+  public int insertEmployee() {
     //TODO
     return 0;
   }
 
-  public int updateEmployee(){
+  public int updateEmployee() {
     //TODO
     return 0;
   }
 
-  public int deleteEmployee(){
+  public int deleteEmployee() {
     //TODO
     return 0;
   }

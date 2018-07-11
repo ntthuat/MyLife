@@ -17,13 +17,12 @@ import java.util.List;
  * $Log: EmployeeController.java,v $
  */
 @Controller
-public class EmployeeController
-{
+public class EmployeeController {
   @Autowired
   private EmployeeService employeeService;
 
   @GetMapping("/all-employees")
-  public String allEmployees(Model model){
+  public String allEmployees(Model model) {
     List employees = employeeService.findAllEmployees();
     model.addAttribute("employees", employees);
     return "all-employees";
@@ -36,7 +35,7 @@ public class EmployeeController
   }
 
   @GetMapping("/employee/{id}")
-  public String getEmployeeById(@PathVariable("id") String id,Model model){
+  public String getEmployeeById(@PathVariable("id") String id, Model model) {
     model.addAttribute("employees", employeeService.findEmployeeById(id));
     return "all-employees";
   }
