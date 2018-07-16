@@ -6,6 +6,9 @@ package com.model;
  * $Log: Employee.java,v $
  */
 public class Employee {
+
+  private String fullName;
+
   private String firstName;
 
   private String lastName;
@@ -109,5 +112,13 @@ public class Employee {
 
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
+  }
+
+  public void setFullName(String fullName) {
+    this.fullName = fullName;
+  }
+
+  public String getFullName() {
+    return fullName;
   }
 }

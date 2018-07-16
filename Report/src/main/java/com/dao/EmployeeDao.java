@@ -36,6 +36,7 @@ public class EmployeeDao {
       e.setCountry(rs.getString("COUNTRY"));
       e.setAddress(rs.getString("ADDRESS"));
       e.setPhoneNumber(rs.getString("PHONENUMBER"));
+      e.setFullName(e.getLastName() + " " + e.getFirstName());
       return e;
     }
   }
@@ -54,6 +55,7 @@ public class EmployeeDao {
   }
 
   public int insert(Employee student) {
+    //TODO: do it later
     /*return jdbcTemplate.update("insert into student (id, name, passport_number) " + "values(?,  ?, ?)",
         new Object[] { student.getId(), student.getName(), student.getPassportNumber() });*/
 
@@ -61,6 +63,7 @@ public class EmployeeDao {
   }
 
   public int update(Employee student) {
+    //TODO: do it later
     /*return jdbcTemplate.update("update student " + " set name = ?, passport_number = ? " + " where id = ?",
         new Object[] { student.getName(), student.getPassportNumber(), student.getId() });*/
 

@@ -31,15 +31,14 @@ public class ExcelView extends AbstractXlsView {
     // create header row
     CellStyle style = ExcelUtil.createHeaderStyle(workbook);
     Row headerRow = sheet.createRow(0);
-    headerRow.createCell(0).setCellValue("Last Name");
-    headerRow.createCell(1).setCellValue("First Name");
-    headerRow.createCell(2).setCellValue("Birthday");
-    headerRow.createCell(3).setCellValue("Job Title");
-    headerRow.createCell(4).setCellValue("Company");
-    headerRow.createCell(5).setCellValue("Address");
-    headerRow.createCell(6).setCellValue("City");
-    headerRow.createCell(7).setCellValue("Country");
-    headerRow.createCell(8).setCellValue("Phone Number");
+    headerRow.createCell(0).setCellValue("Full Name");
+    headerRow.createCell(1).setCellValue("Birthday");
+    headerRow.createCell(2).setCellValue("Job Title");
+    headerRow.createCell(3).setCellValue("Company");
+    headerRow.createCell(4).setCellValue("Address");
+    headerRow.createCell(5).setCellValue("City");
+    headerRow.createCell(6).setCellValue("Country");
+    headerRow.createCell(7).setCellValue("Phone Number");
     for (int i = 0; i < headerRow.getPhysicalNumberOfCells(); i++) {
       headerRow.getCell(i).setCellStyle(style);
     }
@@ -47,15 +46,14 @@ public class ExcelView extends AbstractXlsView {
     int rowCount = 1;
     for (Employee employee : employees) {
       Row userRow = sheet.createRow(rowCount++);
-      userRow.createCell(0).setCellValue(employee.getLastName());
-      userRow.createCell(1).setCellValue(employee.getFirstName());
-      userRow.createCell(2).setCellValue(employee.getBirthDay());
-      userRow.createCell(3).setCellValue(employee.getJobTitle());
-      userRow.createCell(4).setCellValue(employee.getCompany());
-      userRow.createCell(5).setCellValue(employee.getAddress());
-      userRow.createCell(6).setCellValue(employee.getCity());
-      userRow.createCell(7).setCellValue(employee.getCountry());
-      userRow.createCell(8).setCellValue(employee.getPhoneNumber());
+      userRow.createCell(0).setCellValue(employee.getFullName());
+      userRow.createCell(1).setCellValue(employee.getBirthDay());
+      userRow.createCell(2).setCellValue(employee.getJobTitle());
+      userRow.createCell(3).setCellValue(employee.getCompany());
+      userRow.createCell(4).setCellValue(employee.getAddress());
+      userRow.createCell(5).setCellValue(employee.getCity());
+      userRow.createCell(6).setCellValue(employee.getCountry());
+      userRow.createCell(7).setCellValue(employee.getPhoneNumber());
 
     }
   }

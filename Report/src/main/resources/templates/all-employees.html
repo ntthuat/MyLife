@@ -9,8 +9,7 @@
       <table id="myTableId" dt:table="true">
         <thead>
         <tr align="left">
-          <th>Last Name</th>
-          <th>First Name</th>
+          <th>Full Name</th>
           <th>Birth Day</th>
           <th>Job Title</th>
           <th>Company</th>
@@ -22,8 +21,7 @@
         </thead>
         <tbody>
         <tr th:each="employee : ${employees}">
-          <td th:text="${employee.lastName}"></td>
-          <td th:text="${employee.firstName}"></td>
+          <td th:text="${employee.fullName}"></td>
           <td th:text="${employee.birthDay}"></td>
           <td th:text="${employee.jobTitle}"></td>
           <td th:text="${employee.company}"></td>
