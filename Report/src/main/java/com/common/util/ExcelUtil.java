@@ -13,10 +13,14 @@ import org.apache.poi.ss.usermodel.Workbook;
  */
 public class ExcelUtil {
 
+  public static String FONT_ARIAL = "Arial";
+  public static String FONT_TIMES_NEW_ROMAN = "Times New Roman";
+
+
   public static CellStyle createHeaderStyle(Workbook workbook) {
     CellStyle style = workbook.createCellStyle();
     Font font = workbook.createFont();
-    font.setFontName("Arial");
+    font.setFontName(ExcelUtil.FONT_ARIAL);
     style.setFillForegroundColor(HSSFColor.GREEN.index);
     style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
     font.setBold(true);

@@ -1,6 +1,6 @@
 -- Create Schema REPORT
 CREATE SCHEMA IF NOT EXISTS REPORT;
-commit; -- NEED TO USE?
+commit; -- TODO: NEED TO USE?
 
 -------------------
 -- REPORT.EMPLOYEE;
