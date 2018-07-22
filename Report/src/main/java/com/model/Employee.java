@@ -1,7 +1,7 @@
 package com.model;
 
 /**
- * Created by: tnthien
+ * Created by: ntthuat
  * $Revision: 1.0 $ $Date: 2018/06/26 10:51:24 $
  * $Log: Employee.java,v $
  */

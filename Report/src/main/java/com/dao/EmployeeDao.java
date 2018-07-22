@@ -13,7 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by: tnthien
+ * Created by: ntthuat
  * $Revision: 1.0 $ $Date: 2018/06/26 16:02:08 $
  * $Log: EmployeeDao.java,v $
  */

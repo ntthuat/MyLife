@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * Created by: tnthien
+ * Created by: ntthuat
  * $Revision: 1.0 $ $Date: 2018/06/28 15:19:08 $
  * $Log: WebConfigTest.java,v $
  */

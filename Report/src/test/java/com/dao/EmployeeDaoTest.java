@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 
 /**
- * Created by: tnthien
+ * Created by: ntthuat
  * $Revision: 1.0 $ $Date: 2018/06/29 11:37:43 $
  * $Log: EmployeeDaoTest.java,v $
  */
