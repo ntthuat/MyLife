@@ -7,10 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +29,7 @@ public class EmployeeController {
   public String allEmployees(Model model) {
     List employees = employeeService.findAllEmployees();
     model.addAttribute("employees", employees);
-    model.addAttribute("content", "Testtt");
+    model.addAttribute("greeting", new Greeting());
     return "all-employees";
   }
 
@@ -48,5 +49,16 @@ public class EmployeeController {
   public String getEmployeeById(@PathVariable("id") String id, Model model) {
     model.addAttribute("employees", employeeService.findEmployeeById(id));
     return "all-employees";
+  }
+
+  @GetMapping("/greeting")
+  public String greetingForm(Model model) {
+    model.addAttribute("greeting", new Greeting());
+    return "greeting";
+  }
+
+  @PostMapping("/greeting")
+  public String greetingSubmit(@ModelAttribute Greeting greeting) {
+    return "result";
   }
 }
