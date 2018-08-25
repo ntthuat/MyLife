@@ -5,6 +5,8 @@ import com.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.List;
 
 /**
@@ -39,5 +41,15 @@ public class EmployeeService {
   public int deleteEmployee() {
     //TODO
     return 0;
+  }
+
+  @PostConstruct
+  public void initIt() throws Exception {
+    System.out.println("Into EmployeeService.initIt()...");
+  }
+
+  @PreDestroy
+  public void cleanUp() throws Exception {
+    System.out.println("Into EmployeeService.cleanUp()...");
   }
 }

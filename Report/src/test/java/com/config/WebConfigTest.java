@@ -49,5 +49,4 @@ public class WebConfigTest
             .isOk())
         .andDo(MockMvcResultHandlers.print());*/
   }
-
 }

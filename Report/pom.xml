@@ -32,7 +32,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.10.RELEASE</version>
+    <version>1.5.15.RELEASE</version>
   </parent>
 
   <dependencies>
@@ -70,6 +70,18 @@
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <scope>runtime</scope>
+    </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-rest-webmvc -->
+      <dependency>
+          <groupId>org.springframework.data</groupId>
+          <artifactId>spring-data-rest-webmvc</artifactId>
+      </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
     </dependency>
   </dependencies>
 </project>

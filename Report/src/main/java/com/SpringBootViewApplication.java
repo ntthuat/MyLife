@@ -11,9 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringBootViewApplication {
   public static void main(String[] args) {
+    SpringApplication.run(SpringBootViewApplication.class, args);
     System.out.println("Check here: http://localhost:8080/");
     System.out.println("Database here: http://localhost:8080/h2-console");
-
-    SpringApplication.run(SpringBootViewApplication.class, args);
   }
 }

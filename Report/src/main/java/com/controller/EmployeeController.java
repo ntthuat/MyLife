@@ -4,16 +4,22 @@ import com.service.EmployeeService;
 import com.view.ExcelView;
 import com.view.TinhHoaView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 /**
  * Created by: ntthuat
@@ -22,6 +28,7 @@ import java.util.Map;
  */
 @Controller
 public class EmployeeController {
+
   @Autowired
   private EmployeeService employeeService;
 
@@ -61,4 +68,21 @@ public class EmployeeController {
   public String greetingSubmit(@ModelAttribute Greeting greeting) {
     return "result";
   }
+
+  // only for test
+  @RequestMapping(method = GET, value = "/fooBar")
+  public ResponseEntity<String> fooBar() {
+    String json = "jsonResponse";
+    HttpHeaders responseHeaders = new HttpHeaders();
+    responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+    return new ResponseEntity<String>(json, responseHeaders, HttpStatus.CREATED);
+  }
+
+  //only for test
+  /*@RequestMapping(value = "/foo", method = GET)
+  public final String foo(HttpServletRequest request, BindingResult bindResult, ModelMap model) {
+    model.addAttribute("abc", 123);
+    model.addAttribute("employees", employeeService.findEmployeeById("001"));
+    return "all-employees";
+  }*/
 }

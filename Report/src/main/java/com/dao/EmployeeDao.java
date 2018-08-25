@@ -53,7 +53,7 @@ public class EmployeeDao {
     return jdbcTemplate.update("delete from student where id=?", new Object[]{id});
   }
 
-  public int insert(Employee student) {
+  public int save(Employee student) {
     //TODO: do it later
     /*return jdbcTemplate.update("insert into student (id, name, passport_number) " + "values(?,  ?, ?)",
         new Object[] { student.getId(), student.getName(), student.getPassportNumber() });*/
@@ -68,4 +68,5 @@ public class EmployeeDao {
 
     return 0;
   }
+  
 }
