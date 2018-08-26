@@ -43,3 +43,5 @@ PRIMARY KEY (IDCLIENT));
 
 INSERT INTO REPORT.CLIENT VALUES('001', 'Anh', 'Hồ Võ Quốc', '1992-10-02', '01644032290', 'Hồ Chí Minh', 'Super Culi', 'Việt Nam', SYSDATE , 'Test');
 INSERT INTO REPORT.CLIENT VALUES('002', 'Thuật', 'Nguyễn Thiện', '1992-01-16', '01247679629', 'Hồ Chí Minh', 'Coder', 'Việt Nam', SYSDATE , 'Test');
+
+DELETE FROM REPORT.CLIENT WHERE idclient='003';

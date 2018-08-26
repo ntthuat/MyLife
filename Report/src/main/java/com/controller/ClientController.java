@@ -1,11 +1,13 @@
 package com.controller;
 
+import com.model.Client;
 import com.service.ClientService;
-import com.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -27,5 +29,17 @@ public class ClientController {
     List clients = clientService.findAllClients();
     model.addAttribute("clients", clients);
     return "client-all";
+  }
+
+  @GetMapping("/client-new")
+  public String createClient(Model model) {
+    model.addAttribute("client", new Client());
+    return "client-new";
+  }
+
+  @PostMapping("/client-new")
+  public String createClient(@ModelAttribute Client client) {
+    clientService.insertClient(client);
+    return "client-new-result";
   }
 }

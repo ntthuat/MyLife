@@ -22,4 +22,8 @@ public class ClientService {
   public List<Client> findAllClients() {
     return clientDao.findAll();
   }
+
+  public int insertClient(Client client) {
+    return clientDao.save(client);
+  }
 }

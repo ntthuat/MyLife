@@ -23,7 +23,7 @@ import java.util.List;
 public class EmployeeDaoTest
 {
   @Autowired
-  EmployeeDao employeeDao;
+  private EmployeeDao employeeDao;
 
   @Test
   public void findAllTest(){

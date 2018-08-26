@@ -10,8 +10,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -36,7 +34,6 @@ public class EmployeeController {
   public String allEmployees(Model model) {
     List employees = employeeService.findAllEmployees();
     model.addAttribute("employees", employees);
-    model.addAttribute("greeting", new Greeting());
     return "all-employees";
   }
 
@@ -56,17 +53,6 @@ public class EmployeeController {
   public String getEmployeeById(@PathVariable("id") String id, Model model) {
     model.addAttribute("employees", employeeService.findEmployeeById(id));
     return "all-employees";
-  }
-
-  @GetMapping("/greeting")
-  public String greetingForm(Model model) {
-    model.addAttribute("greeting", new Greeting());
-    return "greeting";
-  }
-
-  @PostMapping("/greeting")
-  public String greetingSubmit(@ModelAttribute Greeting greeting) {
-    return "result";
   }
 
   // only for test

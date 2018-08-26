@@ -18,6 +18,8 @@ import java.util.List;
 @Repository
 public class ClientDao {
 
+  private final static String COUNTRY_VIETNAM = "Việt Nam";
+
   @Autowired
   JdbcTemplate jdbcTemplate;
 
@@ -40,5 +42,19 @@ public class ClientDao {
 
   public List<Client> findAll() {
     return jdbcTemplate.query("select * from report.client", new ClientDao.ClientRowMapper());
+  }
+
+  public int save(Client client) {
+    final String maxIdClient = findMaxIdClient();
+    int idClentStr = Integer.parseInt(maxIdClient);
+    idClentStr++;
+    String newIdClient = Integer.toString(idClentStr);
+    newIdClient = ("000" + newIdClient).substring(newIdClient.length());
+    return jdbcTemplate.update("insert into report.client values(?, ?, ?, ?, ?, ?, ?, ?, SYSDATE, ?)",
+        new Object[]{newIdClient, client.getFirstName(), client.getLastName(), client.getBirthDay(), client.getNumberPhone(), client.getAddress(), client.getJob(), COUNTRY_VIETNAM, client.getNote()});
+  }
+
+  public String findMaxIdClient() {
+    return (String) jdbcTemplate.queryForObject("select idclient from report.client order by idclient desc limit 1", String.class);
   }
 }

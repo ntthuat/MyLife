@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Client New Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'Họ Tên: ' + ${client.lastName} + ' ' + ${client.firstName}" />
+    <p th:text="'Birthday: ' + ${client.birthDay}" />
+    <p th:text="'Điện thoại: ' + ${client.numberPhone}" />
+    <p th:text="'Địa chỉ: ' + ${client.address}" />
+    <p th:text="'Nghề nghiệp: ' + ${client.job}" />
+    <p th:text="'Ghi chú: ' + ${client.note}" />
+    <p></p><!--TODO: Why we can't use <br> here?-->
+    <a href="/client/client-new">Tạo khách hàng mới</a><p></p>
+    <a href="/">Về trang chủ</a><p></p>
+    <a href="/client/client-all">Xem tất cả thông tin khách hàng</a>
+</body>
+</html>
