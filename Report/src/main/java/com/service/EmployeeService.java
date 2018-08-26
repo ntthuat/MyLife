@@ -18,7 +18,7 @@ import java.util.List;
 public class EmployeeService {
 
   @Autowired
-  EmployeeDao employeeDao;
+  private EmployeeDao employeeDao;
 
   public List<Employee> findAllEmployees() {
     return employeeDao.findAll();
