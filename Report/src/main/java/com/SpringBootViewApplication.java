@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootViewApplication {
   public static void main(String[] args) {
     SpringApplication.run(SpringBootViewApplication.class, args);
-    System.out.println("Check here: http://localhost:8080/");
-    System.out.println("Database here: http://localhost:8080/h2-console");
+    System.out.println("Check here: http://localhost:12369/");
+    System.out.println("Database here: http://localhost:12369/h2-console");
   }
 }
