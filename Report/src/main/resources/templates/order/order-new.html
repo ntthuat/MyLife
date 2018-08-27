@@ -1,20 +1,19 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
+<head>
     <title>ORDER-NEW</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-	<h1>Form</h1>
-    <form action="#" th:action="@{/order/order-new}" th:object="${order}" method="post">
-        <p>Họ: <input type="text" th:field="*{lastName}" /></p>
-    	<p>Tên: <input type="text" th:field="*{firstName}" /></p>
-        <p>Birthday(yyyy-mm-dd): <input type="text" th:field="*{birthDay}" /></p>
-        <p>Điện thoại: <input type="text" th:field="*{numberPhone}" /></p>
-        <p>Địa chỉ: <input type="text" th:field="*{address}" /></p>
-        <p>Nghề nghiệp: <input type="text" th:field="*{job}" /></p>
-        <p>Ghi chú: <input type="text" th:field="*{note}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
+<h1>Form</h1>
+<form action="#" th:action="@{/order/order-new}" th:object="${order}" method="post">
+    <p>ID Khách Hàng: <input type="text" th:field="*{idClient}"/></p>
+    <p>Ngày hẹn giao: <input type="date" th:field="*{requiredDate}"/></p>
+    <p>Ghi chú: <input type="text" th:field="*{note}" /></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+
 </body>
 </html>
+
+<!--https://uxsolutions.github.io/bootstrap-datepicker/?markup=input&format=&weekStart=&startDate=&endDate=&startView=0&minViewMode=0&maxViewMode=4&todayBtn=false&clearBtn=false&language=en&orientation=auto&multidate=&multidateSeparator=&keyboardNavigation=on&forceParse=on#sandbox-->
