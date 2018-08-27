@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by: ntthuat
@@ -30,8 +31,27 @@ public class OrderDao {
       o.setCreatedDate(rs.getDate("CREATEDDATE"));
       o.setRequiredDate(rs.getDate("REQUIREDDATE"));
       o.setShippedDate(rs.getDate("SHIPPEDDATE"));
-      o.setStatus(rs.getString("NOTE"));
+      o.setStatus(rs.getString("STATUS"));
+      o.setNote(rs.getString("NOTE"));
       return o;
     }
+  }
+
+  public List<Order> findAll() {
+    return jdbcTemplate.query("select * from report.orders", new OrderDao.OrderRowMapper());
+  }
+
+  public int save(Order order) {
+    final String maxId = findMaxId();
+    int newId_int = Integer.parseInt(maxId);
+    newId_int++;
+    String newId_String = Integer.toString(newId_int);
+    newId_String = ("0000" + newId_String).substring(newId_String.length());
+    return jdbcTemplate.update("insert into report.orders values(?, ?, SYSDATE, ?, NULL, ?, ?)",
+        new Object[]{newId_String, order.getIdClient(), order.getRequiredDate(), "Đã Nhận", order.getNote()});
+  }
+
+  public String findMaxId() {
+    return (String) jdbcTemplate.queryForObject("select idorder from report.orders order by idorder desc limit 1", String.class);
   }
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:dt="http://www.thymeleaf.org/dandelion/datatables">
+<head>
+    <title>Order Side</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        table, th, td
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<div class="span12">
+    <table id="myTableId" dt:table="true">
+        <thead>
+        <tr align="left">
+            <th>IDORDER</th>
+            <th>IDCLIENT</th>
+            <th>CREATEDDATE</th>
+            <th>REQUIREDDATE</th>
+            <th>SHIPPEDDATE</th>
+            <th>STATUS</th>
+            <th>NOTE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.idOrder}"></td>
+            <td th:text="${order.idClient}"></td>
+            <td th:text="${order.createdDate}"></td>
+            <td th:text="${order.requiredDate}"></td>
+            <td th:text="${order.shippedDate}"></td>
+            <td th:text="${order.status}"></td>
+            <td th:text="${order.note}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <!--https://www.youtube.com/watch?v=nQqQsuBLh-g-->
+    <!--<p>Get Report <a href="/all-employees/download">here</a></p>
+    <p>Lịch Làm Việc <a href="/all-employees/lich_lam_viec">here</a></p>-->
+    <p>Tạo khách hàng mới <a href="/client/client-new">here</a></p>
+</div>
+</body>
+</html>

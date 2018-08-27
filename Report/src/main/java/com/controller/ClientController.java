@@ -28,18 +28,18 @@ public class ClientController {
   public String allClients(Model model) {
     List clients = clientService.findAllClients();
     model.addAttribute("clients", clients);
-    return "client-all";
+    return "client/client-all";
   }
 
   @GetMapping("/client-new")
   public String createClient(Model model) {
     model.addAttribute("client", new Client());
-    return "client-new";
+    return "client/client-new";
   }
 
   @PostMapping("/client-new")
   public String createClient(@ModelAttribute Client client) {
     clientService.insertClient(client);
-    return "client-new-result";
+    return "client/client-new-result";
   }
 }
