@@ -12,12 +12,11 @@
     <p th:text="'Ngày tạo đơn hàng: ' + ${order.createdDate}" />
     <p th:text="'Ngày hẹn giao: ' + ${order.requiredDate}" />
     <p th:text="'Tình trạng đơn hàng: ' + ${order.status}" />
-    <p th:text="'Ghi chú: ' + ${order.note}" />
 
     <p th:text="'Tên sản phẩm: ' + ${orderDetail.nameProduct}" />
-    <p th:text="'Đơn vị: ' + ${orderDetail.unitPrice}" />
+    <p th:text="'Giá 1 sản phẩm: ' + ${orderDetail.unitPrice} + '000 đồng' " />
     <p th:text="'Số lượng: ' + ${orderDetail.quantity}" />
-    <p th:text="'Thành tiền: ' + ${order.totalPrice} + '.000 đồng' "/>
+    <p th:text="'Tổng tiền: ' + ${order.totalPrice} + '000 đồng' "/>
 
     <a href="/">Trở về trang chủ</a>
 </body>

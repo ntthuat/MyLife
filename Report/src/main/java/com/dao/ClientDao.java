@@ -28,6 +28,7 @@ public class ClientDao {
     @Override
     public Client mapRow(ResultSet rs, int rowNum) throws SQLException {
       Client c = new Client();
+      c.setIdClient(rs.getString("IDCLIENT"));
       c.setFirstName(rs.getString("FIRSTNAME"));
       c.setLastName(rs.getString("LASTNAME"));
       c.setFullName(c.getLastName() + " " + c.getFirstName());

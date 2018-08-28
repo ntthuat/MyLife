@@ -8,6 +8,8 @@ import java.sql.Date;
  * $Log: Client.java
  */
 public class Client {
+  private String idClient;
+
   private String fullName;
 
   private String firstName;
@@ -26,7 +28,8 @@ public class Client {
 
   private String note;
 
-  public Client(String fullName, String firstName, String lastName, Date birthDay, String numberPhone, String address, String job, Date createdDate, String note) {
+  public Client(String idClient, String fullName, String firstName, String lastName, Date birthDay, String numberPhone, String address, String job, Date createdDate, String note) {
+    this.idClient = idClient;
     this.fullName = fullName;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -111,5 +114,13 @@ public class Client {
 
   public void setNote(String note) {
     this.note = note;
+  }
+
+  public String getIdClient() {
+    return idClient;
+  }
+
+  public void setIdClient(String idClient) {
+    this.idClient = idClient;
   }
 }

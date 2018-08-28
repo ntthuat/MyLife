@@ -16,17 +16,19 @@
     <table id="myTableId" dt:table="true">
         <thead>
         <tr align="left">
-            <th>Full Name</th>
-            <th>BirthDay</th>
-            <th>Number Phone</th>
-            <th>Address</th>
-            <th>Job</th>
-            <th>Created Date</th>
-            <th>Note</th>
+            <th>Mã Khách Hàng</th>
+            <th>Họ Tên</th>
+            <th>Ngày Sinh</th>
+            <th>Số Điện Thoại</th>
+            <th>Địa Chỉ</th>
+            <th>Nghề Nghiệp</th>
+            <th>Ngày Tạo</th>
+            <th>Ghi Chú</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="client : ${clients}">
+            <td th:text="${client.idClient}"></td>
             <td th:text="${client.fullName}"></td>
             <td th:text="${client.birthDay}"></td>
             <td th:text="${client.numberPhone}"></td>
