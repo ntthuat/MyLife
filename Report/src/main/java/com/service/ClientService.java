@@ -2,7 +2,6 @@ package com.service;
 
 import com.dao.ClientDao;
 import com.model.Client;
-import com.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +24,9 @@ public class ClientService {
 
   public int insertClient(Client client) {
     return clientDao.save(client);
+  }
+
+  public Client findClientById(String id) {
+    return clientDao.findById(id);
   }
 }

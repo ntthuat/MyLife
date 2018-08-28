@@ -2,6 +2,7 @@ package com.dao;
 
 import com.model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -56,5 +57,11 @@ public class ClientDao {
 
   public String findMaxIdClient() {
     return (String) jdbcTemplate.queryForObject("select idclient from report.client order by idclient desc limit 1", String.class);
+  }
+
+  public Client findById(String id) {
+    return jdbcTemplate.queryForObject("select * from report.client where idclient=?", new Object[]{id},
+        new BeanPropertyRowMapper<Client>(Client.class));
+    //TODO: deal with EmptyResultDataAccessException
   }
 }

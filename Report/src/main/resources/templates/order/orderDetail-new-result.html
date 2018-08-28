@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Order New Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Tạo Đơn Hàng Chi Tiết Thành Công</h1>
+    <p th:text="'Mã đơn hàng: ' + ${order.idOrder}" />
+    <p th:text="'Mã khách hàng: ' + ${order.idClient}" />
+    <p th:text="'Tên khách hàng: ' + ${client.lastName} + ' ' + ${client.firstName}" />
+    <p th:text="'Ngày tạo đơn hàng: ' + ${order.createdDate}" />
+    <p th:text="'Ngày hẹn giao: ' + ${order.requiredDate}" />
+    <p th:text="'Tình trạng đơn hàng: ' + ${order.status}" />
+    <p th:text="'Ghi chú: ' + ${order.note}" />
+
+    <p th:text="'Tên sản phẩm: ' + ${orderDetail.nameProduct}" />
+    <p th:text="'Đơn vị: ' + ${orderDetail.unitPrice}" />
+    <p th:text="'Số lượng: ' + ${orderDetail.quantity}" />
+    <p th:text="'Thành tiền: ' + ${order.totalPrice} + '.000 đồng' "/>
+
+    <a href="/">Trở về trang chủ</a>
+</body>
+</html>

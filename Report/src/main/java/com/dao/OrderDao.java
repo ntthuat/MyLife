@@ -3,6 +3,7 @@ package com.dao;
 import com.model.Client;
 import com.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -42,16 +43,16 @@ public class OrderDao {
   }
 
   public int save(Order order) {
-    final String maxId = findMaxId();
-    int newId_int = Integer.parseInt(maxId);
-    newId_int++;
-    String newId_String = Integer.toString(newId_int);
-    newId_String = ("0000" + newId_String).substring(newId_String.length());
-    return jdbcTemplate.update("insert into report.orders values(?, ?, SYSDATE, ?, NULL, ?, ?)",
-        new Object[]{newId_String, order.getIdClient(), order.getRequiredDate(), "Đã Nhận", order.getNote()});
+    return jdbcTemplate.update("insert into report.orders values(?, ?, ?, ?, ?, ?, ?)",
+        new Object[]{order.getIdOrder(), order.getIdClient(), order.getCreatedDate(), order.getRequiredDate(), order.getShippedDate(), order.getStatus(), order.getNote()});
   }
 
   public String findMaxId() {
     return (String) jdbcTemplate.queryForObject("select idorder from report.orders order by idorder desc limit 1", String.class);
+  }
+
+  public Order findLastOrder() {
+    return jdbcTemplate.queryForObject("select * from report.orders order by idorder desc limit 1",
+        new BeanPropertyRowMapper<Order>(Order.class));
   }
 }

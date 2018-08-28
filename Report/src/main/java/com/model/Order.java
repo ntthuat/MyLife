@@ -1,5 +1,6 @@
 package com.model;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
@@ -22,6 +23,8 @@ public class Order {
   private String status;
 
   private String note;
+
+  private BigDecimal totalPrice;
 
   public Order(String idOrder, String idClient, Date createdDate, Date requiredDate, Date shippedDate, String status, String note) {
     this.idOrder = idOrder;
@@ -90,5 +93,13 @@ public class Order {
 
   public void setNote(String note) {
     this.note = note;
+  }
+
+  public BigDecimal getTotalPrice() {
+    return totalPrice;
+  }
+
+  public void setTotalPrice(BigDecimal totalPrice) {
+    this.totalPrice = totalPrice;
   }
 }
