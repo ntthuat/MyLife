@@ -1,0 +1,3 @@
+-- Create Schema STOCK
+CREATE SCHEMA IF NOT EXISTS STOCK;
+commit; -- TODO: NEED TO USE?
