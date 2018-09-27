@@ -20,7 +20,7 @@ import java.util.List;
 public class EmployeeDao {
 
   @Autowired
-  JdbcTemplate jdbcTemplate;
+  private JdbcTemplate jdbcTemplate;
 
   class EmployeeRowMapper implements RowMapper<Employee> {
     @Override

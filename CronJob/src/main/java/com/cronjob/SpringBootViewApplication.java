@@ -9,8 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * $Log: SpringBootViewApplication.java,v $
  */
 @SpringBootApplication
-public class SpringBootViewApplication
-{
+public class SpringBootViewApplication {
   public static void main(String[] args) {
     SpringApplication.run(SpringBootViewApplication.class, args);
     System.out.println("Check here: http://localhost:12370/");

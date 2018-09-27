@@ -1,6 +1,7 @@
-package com.dao;
+package com.cronjob.dao;
 
-import com.model.Employee;
+import com.cronjob.model.Stock;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,19 +12,19 @@ import java.util.List;
 
 /**
  * Created by: ntthuat
- * $Revision: 1.0 $ $Date: 2018/06/29 11:37:43 $
- * $Log: EmployeeDaoTest.java,v $
+ * $Revision: 1.0 $Date: 2018/09/27 11:34 AM
+ * $Log: StockDaoTest.java
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class EmployeeDaoTest
-{
+public class StockDaoTest {
+
   @Autowired
-  private EmployeeDao employeeDao;
+  private StockDao stockDao;
 
   @Test
-  public void findAllTest(){
-    List<Employee> list = employeeDao.findAll();
+  public void findAllNasdaqTest(){
+    List<Stock> list = stockDao.findAllNasdaq();
     System.out.println(list.size());
   }
 }

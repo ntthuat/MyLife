@@ -7,3 +7,8 @@ CronJob/target/
 /Reference
 CronJob/.idea/
 CronJob/CronJob.iml
+
+# Word temporary
+~$*.doc*
+
+*.tmp
