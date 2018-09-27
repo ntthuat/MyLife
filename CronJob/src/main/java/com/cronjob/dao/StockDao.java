@@ -25,7 +25,7 @@ public class StockDao {
     @Override
     public Stock mapRow(ResultSet rs, int rowNum) throws SQLException {
       Stock s = new Stock();
-      s.setStock_quote(rs.getString("stock_quote"));
+      s.setStock_symbol(rs.getString("stock_symbol"));
       s.setPrevious_close_price(rs.getBigDecimal("previous_close_price"));
       s.setOpen_price(rs.getBigDecimal("open_price"));
       s.setPrice(rs.getBigDecimal("price"));

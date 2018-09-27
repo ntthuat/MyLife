@@ -10,7 +10,7 @@ import java.sql.Timestamp;
  */
 public class Stock {
 
-  private String stock_quote;
+  private String stock_symbol;
 
   private BigDecimal previous_close_price;
 
@@ -20,12 +20,12 @@ public class Stock {
 
   private Timestamp creation_date;
 
-  public String getStock_quote() {
-    return stock_quote;
+  public String getStock_symbol() {
+    return stock_symbol;
   }
 
-  public void setStock_quote(String stock_quote) {
-    this.stock_quote = stock_quote;
+  public void setStock_symbol(String stock_symbol) {
+    this.stock_symbol = stock_symbol;
   }
 
   public BigDecimal getPrevious_close_price() {
