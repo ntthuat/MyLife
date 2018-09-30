@@ -2,6 +2,7 @@ package com.cronjob.service;
 
 import com.cronjob.dao.StockDao;
 import com.cronjob.model.Stock;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,8 @@ import java.util.List;
  */
 @Service
 public class StockService {
+
+  private static final Logger logger = Logger.getLogger(StockService.class);
 
   @Autowired
   private StockDao stockDao;

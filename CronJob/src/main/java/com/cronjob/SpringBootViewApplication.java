@@ -2,7 +2,6 @@ package com.cronjob;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * Created by: ntthuat
@@ -10,8 +9,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * $Log: SpringBootViewApplication.java,v $
  */
 @SpringBootApplication
-@EnableScheduling
 public class SpringBootViewApplication {
+
   public static void main(String[] args) {
     SpringApplication.run(SpringBootViewApplication.class, args);
     System.out.println("Check here: http://localhost:12370/");
