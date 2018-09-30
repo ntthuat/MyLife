@@ -12,3 +12,4 @@ CronJob/CronJob.iml
 ~$*.doc*
 
 *.tmp
+*.log
